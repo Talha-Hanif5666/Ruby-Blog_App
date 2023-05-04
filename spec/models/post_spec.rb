@@ -15,7 +15,7 @@ RSpec.describe Post, type: :model do
     it 'should not allow titles longer than 250 characters' do
       @post.title = 'a' * 251
       expect(@post).to_not be_valid
-      expect(@post.errors[:title]).to include("is too long (maximum is 250 characters)")
+      expect(@post.errors[:title]).to include('is too long (maximum is 250 characters)')
     end
 
     it 'comment counter must be integer' do
@@ -46,7 +46,6 @@ RSpec.describe Post, type: :model do
 
     describe '#recent_five_comments' do
       it 'returns the 5 most recent comments on the post' do
-        comment1 = Comment.create(post: @post, author: @user, text: 'This is the first comment')
         comment2 = Comment.create(post: @post, author: @user, text: 'This is the second comment')
         comment3 = Comment.create(post: @post, author: @user, text: 'This is the third comment')
         comment4 = Comment.create(post: @post, author: @user, text: 'This is the fourth comment')
