@@ -3,9 +3,14 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   describe 'Comment Model' do
     before do
-      @user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher')
-      @post = Post.new(author: @user, title: 'Hello', text: 'This is my first post')
-      @comment = Comment.new(post_id: @post.id, author_id: @user.id, text: 'This is my first comment')
+      @comment = Comment.new(text: 'This is my first comment')
+    end
+
+    it 'increments the post comments counter by 1' do
+      user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher')
+      post = Post.create(author: user, title: 'Hello', text: 'This is my first post')
+      comment = Comment.new(post_id: post.id, author_id: user.id, text: 'This is my first comment')
+      expect { comment.save }.to change { post.reload.comments_counter }.by(1)
     end
 
     it 'text should not be blank' do
