@@ -1,4 +1,7 @@
 <a name="readme-top"></a>
+<div align="center">
+  <img src="./MyLogo.png" alt="logo" width="140"  height="auto" /> </div>
+  <br/>
 <h1 align='center'> Rails Blog App</h1>
 
 
