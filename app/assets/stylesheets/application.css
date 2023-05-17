@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   background-color: #046f68;
-  color: rgb(0, 0, 0);
+  color: white;
 }
 
 a {
@@ -146,6 +146,73 @@ hr {
 .comment-button {
   padding: 5px 10px;
   color: white;
+  border: 1px solid rgb(231, 225, 225);
+  border-radius: 5px;
+}
+
+.devise-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 3%;
+}
+
+.devise-container label {
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.devise-container a {
+  color: white;
+}
+
+.remember-me-label {
+  margin-left: 100px;
+}
+
+.devise-container input::placeholder {
+  color: rgb(174, 174, 174);
+}
+
+.devise-container a:hover {
+  color: rgb(53, 183, 226);
+}
+
+.devise-container input {
+  width: 24em;
+  display: flex;
   border: 1px solid white;
   border-radius: 5px;
+  padding: 5px;
+}
+
+.actions input {
+  border-radius: 5px;
+  background: rgb(53, 183, 226);
+  border: 0;
+  color: white;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container input:not([type="checkbox"]):not([type="submit"]) {
+  outline: 0;
+  width: 20rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 0.5px solid gray;
+  padding: 1% 2%;
+  font-size: 1.2rem;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
 }
