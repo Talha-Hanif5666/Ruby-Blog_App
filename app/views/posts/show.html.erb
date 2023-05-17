@@ -20,10 +20,11 @@
     </div>
             <div class="comments-container-post">
                 <% @comments=Post.find(@post.id).comments %>
-                   <% @comments.includes(:author).each do |comment| %>
+                    <% @comments.includes(:author).each do |comment| %>
                         <div  id="single-comment">
                             <span> <%= comment.author.name %> : <%= comment.text %></span>
                         </div>
                     <% end %>
     </div>
 </div>
+
