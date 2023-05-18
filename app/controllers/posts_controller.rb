@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: params[:user_id])
@@ -29,7 +29,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     authorize! :destroy, @post
     @post.destroy
-    redirect_to posts_path, notice: "Post deleted successfully."
+    redirect_to posts_path, notice: 'Post deleted successfully.'
   end
-  
 end
