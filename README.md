@@ -133,6 +133,12 @@ To deploy the app you can use
 - Twitter: [@twitterhandle](https://twitter.com/TalhaHa45039660?t=R4git6jFgsysI4xPxmN-ag&s=09)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-talha-hanif-6b1355116)
 
+### 👤 **Moses Wamae**
+
+- GitHub: [@mosdevx](https://github.com/mosdevx)
+- Twitter: [@moseswamae7](https://twitter.com/moseswamae7)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/moses-wamae-a13a67244)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
