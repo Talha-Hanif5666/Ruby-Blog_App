@@ -1,14 +1,13 @@
 class PostsController < ApplicationController
   # load_and_authorize_resource
-  
+
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: params[:user_id])
 
     respond_to do |format|
-
-      format.html 
-      format.json {render :json => @posts}
+      format.html
+      format.json { render json: @posts }
     end
   end
 
@@ -18,8 +17,8 @@ class PostsController < ApplicationController
     @like = Like.new
 
     respond_to do |format|
-      format.html 
-      format.json {render :json => @post}
+      format.html
+      format.json { render json: @post }
     end
   end
 

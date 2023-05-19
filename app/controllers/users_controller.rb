@@ -3,8 +3,8 @@ class UsersController < ApplicationController
     @users = User.all
 
     respond_to do |format|
-      format.html 
-      format.json {render :json => @users}
+      format.html
+      format.json { render json: @users }
     end
   end
 
@@ -12,8 +12,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     respond_to do |format|
-      format.html 
-      format.json {render :json => @user}
+      format.html
+      format.json { render json: @user }
     end
   end
 end
