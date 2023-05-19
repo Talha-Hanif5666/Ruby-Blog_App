@@ -1,19 +1,28 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
+  protect_from_forgery :except => [:create, :update, :destroy]
+  
+  def index
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+
+    respond_to do |format|
+        
+        format.html 
+        format.json {render :json => @comments}
+      end   
+
+  end
+
 
   def new
     @comment = Comment.new
     @post = Post.find(params[:post_id])
   end
 
-  def create
-    @user = current_user
-    @post = Post.find(params[:post_id])
-    @comment = Comment.new(author_id: @user.id, post: @post, text: params[:comment][:text])
-    @comment.save
+# Add here
 
-    redirect_to user_posts_path(@user, @post)
-  end
+# End here
 
   def destroy
     @comment = Comment.find(params[:id])
