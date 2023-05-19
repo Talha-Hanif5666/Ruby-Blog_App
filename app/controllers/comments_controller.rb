@@ -20,9 +20,24 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
   end
 
-# Add here
+  def create
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new(author_id: @user.id, post: @post, text: params[:text])
+   
+   if @comment.save
+    respond_to do |format|
+      format.html {redirect_to user_post_path(@user, @post)}
+      format.json {render :json => @comment}
+    end
+    else
+      respond_to do |format|
+        format.html {render :new}
+        format.json {render :json => @comment.errors}
+      end
+    end
 
-# End here
+  end
 
   def destroy
     @comment = Comment.find(params[:id])
