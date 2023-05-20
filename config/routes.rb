@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  scope '/api', :defaults => {:format => :json} do
+    
+    resources :users, only: [:index, :show] do
+      resources :posts, only: [:index, :show, :new, :create] do
+        resources :comments, only: [:index, :new, :create]
+      end
+    end
+  end
+
+
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   

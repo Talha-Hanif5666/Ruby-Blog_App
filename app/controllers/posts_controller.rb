@@ -1,15 +1,25 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
 
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: params[:user_id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   end
 
   def show
     @post = Post.includes(:comments).find(params[:id])
     @comments = @post.comments
     @like = Like.new
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @post }
+    end
   end
 
   def new
